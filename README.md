@@ -138,3 +138,4 @@ git push -u origin main
 - NFT inheritance records
 - persistent database storage
 - React frontend
+## Added feature: Unlock logic implemented
