@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111827;
+  color: #f9fafb;
+}
+
+.container {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.subtitle {
+  color: #d1d5db;
+}
+
+.card {
+  background: #1f2937;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #374151;
+}
+
+button {
+  background: #8b5cf6;
+  color: white;
+  cursor: pointer;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.list-header button {
+  width: auto;
+}
+
+.message-item {
+  list-style: none;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: 8px;
+  background: #374151;
+}

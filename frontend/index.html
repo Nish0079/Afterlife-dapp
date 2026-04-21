@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>After Life dApp</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>After Life dApp</h1>
+      <p class="subtitle">Store a digital legacy message with a future unlock date.</p>
+
+      <form id="messageForm" class="card">
+        <label>
+          Owner
+          <input id="owner" name="owner" type="text" placeholder="Alex" required />
+        </label>
+
+        <label>
+          Beneficiary
+          <input id="beneficiary" name="beneficiary" type="text" placeholder="Jamie" required />
+        </label>
+
+        <label>
+          Message
+          <textarea
+            id="message"
+            name="message"
+            placeholder="This message will be delivered in the future..."
+            minlength="5"
+            maxlength="280"
+            required
+          ></textarea>
+        </label>
+
+        <label>
+          Unlock date
+          <input id="unlockDate" name="unlockDate" type="date" required />
+        </label>
+
+        <button type="submit">Save legacy message</button>
+      </form>
+
+      <section class="card">
+        <div class="list-header">
+          <h2>Stored Messages</h2>
+          <button id="refreshButton" type="button">Refresh</button>
+        </div>
+        <ul id="messageList"></ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
