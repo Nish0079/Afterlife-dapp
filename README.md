@@ -10,6 +10,7 @@ This version is structured to align with the software management brief by includ
 - service-layer backend structure (`routes`, `controllers`, `services`, `types`, `middleware`)
 - npm scripts for build and development
 - request validation using `express-validator`
+- improved API endpoint documentation after branch workflow
 - ESLint setup for static code analysis
 - Prettier setup for code formatting
 - Git workflow guidance for commit, branch, merge, and sync
