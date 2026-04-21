@@ -1,18 +1,10 @@
 import express from 'express';
-import {
-  addMessage,
-  fetchMessageById,
-  fetchMessages,
-} from '../controllers/afterlifeController.js';
-import {
-  validateCreateMessage,
-  validateMessageId,
-} from '../middleware/validators.js';
+import { addMessage, fetchMessages } from '../controllers/afterlifeController.js';
+import { validateMessage } from '../middleware/validators.js';
 
 const router = express.Router();
 
-router.post('/', validateCreateMessage, addMessage);
+router.post('/', validateMessage, addMessage);
 router.get('/', fetchMessages);
-router.get('/:id', validateMessageId, fetchMessageById);
 
 export default router;

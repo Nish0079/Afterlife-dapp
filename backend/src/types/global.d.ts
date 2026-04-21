@@ -5,7 +5,7 @@ interface AfterLifeMessage {
   message: string;
   unlockDate: string;
   status: 'locked' | 'released';
-  createdAt: string;
+  createdAt: Date;
 }
 
 interface CreateAfterLifeMessageInput {

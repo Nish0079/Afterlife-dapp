@@ -1,0 +1,5 @@
+*   d7adba1 (HEAD -> main) merge: validation-improvements into main
+|\  
+| * 848ebb4 (validation-improvements) docs: refine validation and endpoint notes
+|/  
+* 1ef8925 feat: initialise afterlife dapp coursework structure

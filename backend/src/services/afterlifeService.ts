@@ -1,23 +1,47 @@
 const messages: AfterLifeMessage[] = [];
 
 export const createMessage = (
-  input: CreateAfterLifeMessageInput,
-): AfterLifeMessage => {
-  const newMessage: AfterLifeMessage = {
+  owner: string,
+  beneficiary: string,
+  message: string,
+  unlockDate: string
+) => {
+  const now = new Date();
+  const unlock = new Date(unlockDate);
+
+  const status: 'locked' | 'released' = unlock > now ? 'locked' : 'released';
+
+  const newMsg: AfterLifeMessage = {
     id: Date.now(),
-    owner: input.owner,
-    beneficiary: input.beneficiary,
-    message: input.message,
-    unlockDate: input.unlockDate,
-    status: new Date(input.unlockDate) <= new Date() ? 'released' : 'locked',
-    createdAt: new Date().toISOString(),
+    owner,
+    beneficiary,
+    message,
+    unlockDate,
+    status,
+    createdAt: new Date(),
   };
 
-  messages.push(newMessage);
-  return newMessage;
+  messages.push(newMsg);
+  return newMsg;
 };
 
-export const getMessages = (): AfterLifeMessage[] => messages;
+export const getMessages = () => {
+  const now = new Date();
 
-export const getMessageById = (id: number): AfterLifeMessage | undefined =>
-  messages.find((message) => message.id === id);
+  return messages.map((msg) => {
+    const unlock = new Date(msg.unlockDate);
+
+    if (unlock > now) {
+      return {
+        ...msg,
+        message: '🔒 Message locked until unlock date',
+        status: 'locked' as const,
+      };
+    }
+
+    return {
+      ...msg,
+      status: 'released' as const,
+    };
+  });
+};
